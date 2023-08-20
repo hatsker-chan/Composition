@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        tools:srcCompat="@drawable/sad_smile" />
+        tools:srcCompat="@drawable/emoji_sad" />
 
     <TextView
         android:id="@+id/tv_min_score"
