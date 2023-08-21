@@ -5,5 +5,5 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Composition" parent="Base.Theme.Composition" />
+    <style name="Theme.Composition" parent="Theme.Material3.Light.NoActionBar" />
 </resources>
