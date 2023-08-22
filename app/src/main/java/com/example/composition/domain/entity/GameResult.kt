@@ -1,8 +1,14 @@
 package com.example.composition.domain.entity
 
-class GameResult (
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class GameResult (
     val winner: Boolean,
     val countOfRightAnswers: Int,
-    val countOnQuestions: Int,
+    val countOfQuestions: Int,
     val gameSettings: GameSettings
-)
+) : Parcelable{
+    val percentOfRightAnswers = ((countOfRightAnswers.toDouble() / countOfQuestions) * 100).toInt()
+}
