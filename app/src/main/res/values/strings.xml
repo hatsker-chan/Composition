@@ -16,5 +16,5 @@
     <string name="min_rights_answers">Необходимое количество правильных ответов: %s</string>
     <string name="players_score">Ваш счёт: %s</string>
     <string name="min_percent">Необходимый процент правильных ответов: %s</string>
-    <string name="player_percent">Необходимый процент правильных ответов: %s</string>
+    <string name="player_percent">Ваш процент правильных ответов: %s</string>
 </resources>

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.OnBackPressedDispatcherOwner
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.composition.R
@@ -41,8 +40,32 @@ class GameFinishedFragment : Fragment() {
                 retryGame()
             }
         }
-
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+
+
+        val emojiRes = if (gameResult.winner) {
+            R.drawable.emoji_happy
+        } else {
+            R.drawable.emoji_sad
+        }
+        binding.ivEmoji.setImageResource(emojiRes)
+
+        binding.tvMinPercent.text = String.format(
+            requireContext().resources.getString(R.string.min_percent),
+            gameResult.gameSettings.minPercentOfRightAnswers
+        )
+        binding.tvMinScore.text = String.format(
+            requireContext().resources.getString(R.string.min_rights_answers),
+            gameResult.gameSettings.minCountOfRightAnswers
+        )
+        binding.tvPlayerPercent.text = String.format(
+            requireContext().resources.getString(R.string.player_percent),
+            gameResult.percentOfRightAnswers
+        )
+        binding.tvPlayerScore.text = String.format(
+            requireContext().resources.getString(R.string.players_score),
+            gameResult.countOfRightAnswers
+        )
 
         binding.buttonTryAgain.setOnClickListener {
             retryGame()
