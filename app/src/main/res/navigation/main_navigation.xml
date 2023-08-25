@@ -10,7 +10,7 @@
         android:label="WelcomeFragment"
         tools:layout="@layout/fragment_welcome">
         <action
-            android:id="@+id/action_welcomeFragment_to_chooseLevelFragment2"
+            android:id="@+id/action_welcomeFragment_to_chooseLevelFragment"
             app:destination="@id/chooseLevelFragment" />
     </fragment>
     <fragment
@@ -29,7 +29,9 @@
         tools:layout="@layout/fragment_game" >
         <action
             android:id="@+id/action_gameFragment_to_gameFinishedFragment"
-            app:destination="@id/gameFinishedFragment" />
+            app:destination="@id/gameFinishedFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/gameFinishedFragment"
