@@ -32,10 +32,17 @@
             app:destination="@id/gameFinishedFragment"
             app:popUpTo="@id/gameFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="level"
+            app:argType="com.example.composition.domain.entity.Level" />
     </fragment>
     <fragment
         android:id="@+id/gameFinishedFragment"
         android:name="com.example.composition.presentation.GameFinishedFragment"
         android:label="GameFinishedFragment"
-        tools:layout="@layout/fragment_game_finished"/>
+        tools:layout="@layout/fragment_game_finished">
+        <argument
+            android:name="gameResult"
+            app:argType="com.example.composition.domain.entity.GameResult" />
+    </fragment>
 </navigation>
